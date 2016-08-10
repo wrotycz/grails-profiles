@@ -1,0 +1,8 @@
+description: Rest-api profile with Spring Security and MySQL datasources added. For security quick start refer to s2-quickstart.
+dependencies:
+    compile:
+        - "org.mycompany:myplugin:1.0.1"
+        - "org.grails.plugins:spring-security-core:3.1.1"
+        - "org.grails.plugins:spring-security-rest:2.0.0.M2"
+    runtime:
+        - "mysql:mysql-connector-java:5.1.39"

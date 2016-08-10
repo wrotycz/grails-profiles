@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:${project.grailsVersion}"
+    }
+}
+
+apply plugin: "org.grails.grails-profile"
+apply plugin: "org.grails.grails-profile-publish"
+
+group 'org.grails.profiles'
+version '0.1'
+
+//grailsPublish {
+//    TODO: Provide values here
+//    user = 'user'
+//    key = 'key'
+//    githubSlug = 'foo/bar'
+//    license {
+//        name = 'Apache-2.0'
+//    }
+//    title = "My Profile"
+//    desc = "Rest-api profile with Spring Security and MySQL datasources added. For security quick start refer to s2-quickstart."
+//    developers = [johndoe:"John Doe"]
+//}
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+}  
+
+dependencies {
+    runtime "org.grails.profiles:base:${project.grailsVersion}"
+    runtime project(':rest-api')
+    runtime 'mysql:mysql-connector-java:5.1.39'
+    compile 'org.grails.plugins:spring-security-core:3.1.1'
+    compile "org.grails.plugins:spring-security-rest:2.0.0.M2"
+}
