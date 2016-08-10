@@ -12,20 +12,19 @@ apply plugin: "org.grails.grails-profile"
 apply plugin: "org.grails.grails-profile-publish"
 
 group 'org.grails.profiles'
-version '0.1'
+version '0.2'
 
-//grailsPublish {
-//    TODO: Provide values here
-//    user = 'user'
-//    key = 'key'
-//    githubSlug = 'foo/bar'
-//    license {
-//        name = 'Apache-2.0'
-//    }
-//    title = "My Profile"
-//    desc = "Rest-api profile with Spring Security and MySQL datasources added. For security quick start refer to s2-quickstart."
-//    developers = [johndoe:"John Doe"]
-//}
+grailsPublish {
+    user = 'wrotycz'
+    key = ''
+    githubSlug = 'wrotycz/grails-profiles/tree/master/rest-api-with-security-and-mysql'
+    license {
+        name = 'Apache-2.0'
+    }
+    title = "rest-api-with-security-and-mysql"
+    desc = "Rest-api profile with Spring Security and MySQL datasources added. For security quick start refer to s2-quickstart."
+    developers = [wrotycz:"Kamil Węglarz"]
+}
 
 repositories {
     mavenLocal()
@@ -33,9 +32,5 @@ repositories {
 }  
 
 dependencies {
-    runtime "org.grails.profiles:base:${project.grailsVersion}"
-    runtime project(':rest-api')
-    runtime 'mysql:mysql-connector-java:5.1.39'
-    compile 'org.grails.plugins:spring-security-core:3.1.1'
-    compile "org.grails.plugins:spring-security-rest:2.0.0.M2"
+    runtime "org.grails.profiles:rest-api:${project.grailsVersion}"
 }
