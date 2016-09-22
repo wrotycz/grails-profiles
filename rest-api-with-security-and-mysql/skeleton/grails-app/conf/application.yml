@@ -55,10 +55,10 @@ environments:
 grails:
     plugin:
         springsecurity:
-            userLookup.userDomainClassName: 'pl.emisoft.microservices.kropek.users.User'
-            userLookup.authorityJoinClassName: 'pl.emisoft.microservices.kropek.users.UserRole'
+            userLookup.userDomainClassName: 'package.User'
+            userLookup.authorityJoinClassName: 'package.UserRole'
             useSecurityEventListener: true
-            authority.className: 'pl.emisoft.microservices.kropek.users.Role'
+            authority.className: 'package.Role'
             securityConfigType: 'InterceptUrlMap'
             interceptUrlMap:
                 - {pattern: '/', access: ['permitAll']}
